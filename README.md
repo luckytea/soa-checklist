@@ -19,6 +19,9 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
       * Data migration
       * Switchover
       * Service rollback
+* Pre-commit/push hooks.
+  * Short test.
+  * Fast linters.
 
 ## Automated processes
 
