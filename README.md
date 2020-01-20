@@ -92,6 +92,7 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
             * DEV/DEBUG mode
          * Logging
             * Writing in stdout (without using containers’ file system) will enforce cluster layer to keep all logs
+            * Structured logging for better search.
          * Monitoring
             * Application and business checks (New Relic: throughput, metrics)
             * Self health checks (metrics+[Prometeus](http://www.prometeus.net/site/)+[Grafana](https://grafana.org/))
