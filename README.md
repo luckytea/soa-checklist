@@ -125,7 +125,7 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
          * Ceph
          * NFS
 * Common services 
-   * Tracing system ([Zipkin](http://zipkin.io/))
+   * Tracing system ([zipkin](https://zipkin.io/), [Jaeger](https://www.jaegertracing.io/))
    * Single sign-on service
       * Authentication service ([JWT](https://jwt.io/))
       * Authorization requests from all services
