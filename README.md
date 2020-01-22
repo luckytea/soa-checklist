@@ -100,7 +100,7 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
                * Db content (custom checks)
                * Cache utilization check
          * Alerting policies ([Prometeus](http://www.prometeus.net/site/), [NewRelic](https://newrelic.com))
-         * Tracing system agent ([zipkin](http://zipkin.io/))
+         * Tracing system agent ([zipkin](https://zipkin.io/), [Jaeger](https://www.jaegertracing.io/))
          * Self-sufficiency 
             * Interfaces documentation
                * Restful API
