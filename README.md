@@ -101,7 +101,7 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
           * Cache utilization check
         * Alerting policies ([Prometeus](http://www.prometeus.net/site/), [NewRelic](https://newrelic.com))
         * Tracing system agent ([zipkin](https://zipkin.io/), [Jaeger](https://www.jaegertracing.io/))
-        * Self-sufficiency 
+        * Self-sufficiency
           * Interfaces documentation
             * Restful API
               * [Swagger](http://swagger.io/)
@@ -116,7 +116,7 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
     * Failover and self-reorganisation in case of:
       * Service crashed
       * Physical node out of cluster
-      * Resources problems on specific node 
+      * Resources problems on specific node
     * Logs system
       * Service to collect and access logs grabbed from Cluster layer
         * ELK stack/Gray Log/etc
