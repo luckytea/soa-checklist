@@ -17,7 +17,7 @@ fi
 echo "start go vet check..."
 
 {
-	go vet $STAGED_GO_FILES
+	go vet $(go list ./... | grep -v /vendor/)
 } || {
 	exitStatus=$?
 
