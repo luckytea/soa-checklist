@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# setup: git config core.hooksPath .githooks
+
+# An hook script to verify what is about to be committed.
+# Called by "git commit" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message if
+# it wants to stop the commit.
+
+STAGED_GO_FILES=$(git diff --diff-filter=d --cached --name-only -- '*.go')
+
+if [[ "$STAGED_GO_FILES" = "" ]]; then
+	echo "no *.go files were stashed"
+	exit 0
+fi
+
+echo "start go vet check..."
+
+{
+	go vet $STAGED_GO_FILES
+} || {
+	exitStatus=$?
+
+	if [ $exitStatus ]; then
+		echo $exitStatus
+		exit 1
+	fi
+}
+
+echo "start quick test..."
+
+{
+	go test -race -short $(go list ./... | grep -v /vendor/)
+} || {
+	exitStatus=$?
+
+	if [ $exitStatus ]; then
+		echo $exitStatus
+		exit 1
+	fi
+}
+
+
+exit 0
