@@ -19,7 +19,7 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
     * Data migration
     * Switchover
     * Service rollback
-* Pre-commit/push hooks.
+* [Pre-commit](.githooks/pre-commit)/push hooks.
   * Short test.
   * Fast linters.
 
@@ -30,7 +30,7 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
     * Automated
       * Unit tests
       * Functional tests
-      * Code style (lints and sniffers - [golangci-lint](https://github.com/golangci/golangci-lint))
+      * Code style ([golangci-lint](https://github.com/golangci/golangci-lint))
       * Code quality monitoring ([Sonar](http://www.sonarqube.org/), [Scrutinizer](https://scrutinizer-ci.com/))
       * Code coverage checks ([gitlab example](https://medium.com/@ulm0_/golang-multi-packages-test-coverage-with-gitlab-ci-a7b52b91ef34))
     * Manual
