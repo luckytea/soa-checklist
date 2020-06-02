@@ -154,3 +154,4 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
 ## Maintenance
 
 * Disaster recovery plan (how to recover service/database/whole cluster/whole region)
+* Release strategy process (canary, blue\green)
