@@ -150,3 +150,7 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
   * Messages system: [Rabbit MQ cluster](https://github.com/relaxart/docker-rabbitmq-cluster)
   * Healthcheck system
   * Alerting system
+
+## Maintenance
+
+* Disaster recovery plan (how to recover service/database/whole cluster/whole region)
