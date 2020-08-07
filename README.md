@@ -10,6 +10,7 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
   * Understanding of the whole process by each member
   * Pro-active development and support
   * Accepted responsibilities and duties for each stage of a service
+  * The information on how to contribute MUST explain the contribution process ([pull requests/issue](https://github.com/kubernetes/community/tree/master/contributors/guide)) 
 * Plan for service live circle
   * Pre-production development
   * Launching
