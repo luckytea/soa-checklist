@@ -4,7 +4,6 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
 
 ## Administrative (people, flows, responsibilities)
 
-```
 * Blueprint/template for a new service
 * Documentation, standards, guides (how-to, know-how documents)
 * Team support
@@ -24,11 +23,9 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
 * [Pre-commit](.githooks/pre-commit)/push hooks.
   * Short test.
   * Fast linters.
-```
 
 ## Automated processes
 
-```
 * Continuous development
   * Tests
     * Automated
@@ -53,11 +50,9 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
 * Continuous delivery of stable artefacts
   * [Images builder](https://github.com/paunin/images-builder)
   * Services provisioning([Ansible](https://www.ansible.com/))
-```
 
 ## Implementation
 
-```
 * System layers
   * Hardware: Servers and networks
     * Scaling (adding new nodes) should not affect consistency of other layers
@@ -157,20 +152,16 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
   * Messages system: [Rabbit MQ cluster](https://github.com/relaxart/docker-rabbitmq-cluster)
   * Healthcheck system
   * Alerting system
-```
 
 ## Maintenance
 
-```
 * Disaster recovery plan (how to recover service/database/whole cluster/whole region)
 * Release strategy process (canary, blue\green)
 * Capacity planning (resources & limits)
 * Alerts at least for basic metrics (CPU, memory, IOPS, disk space, restarts, servuces up)
-```
 
 ## Security
 
-```
 * Access and application logs must be archived for a minimum of 90 days
 * Set HSTS to 31536000 (1 year)
   * `strict-transport-security: max-age=31536000`
@@ -184,15 +175,12 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
   * Set the Secure and HTTPOnly flags
   * Use a sensible Expiration
   * Use the prefix `__Host-` for the cookie name
-```
 
 ## Databases
 
-```
 * All SQL queries must be parameterized, not concatenated
 * Applications must use accounts with limited GRANTS when connecting to databases
   * In particular, applications **must not use admin or owner accounts**, to decrease the impact of a sql injection vulnerability.
 * User data must be [escaped for the right context](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet#XSS_Prevention_Rules_Summary) prior to reflecting it
 * Apply sensible limits to user inputs, see [input validation](https://wiki.mozilla.org/WebAppSec/Secure_Coding_Guidelines#Input_Validation)
   * POST body size should be small (<500kB) unless explicitly needed
-```
