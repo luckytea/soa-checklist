@@ -4,6 +4,7 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
 
 ## Administrative (people, flows, responsibilities)
 
+```
 * Blueprint/template for a new service
 * Documentation, standards, guides (how-to, know-how documents)
 * Team support
@@ -23,9 +24,11 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
 * [Pre-commit](.githooks/pre-commit)/push hooks.
   * Short test.
   * Fast linters.
+```
 
 ## Automated processes
 
+```
 * Continuous development
   * Tests
     * Automated
@@ -50,9 +53,11 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
 * Continuous delivery of stable artefacts
   * [Images builder](https://github.com/paunin/images-builder)
   * Services provisioning([Ansible](https://www.ansible.com/))
+```
 
 ## Implementation
 
+```
 * System layers
   * Hardware: Servers and networks
     * Scaling (adding new nodes) should not affect consistency of other layers
@@ -94,6 +99,7 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
       * Logging
         * Writing in stdout (without using containers’ file system) will enforce cluster layer to keep all logs
         * Structured logging for better search.
+        * Access and application logs must be archived for a minimum of 90 days
       * Monitoring
         * Application and business checks (New Relic: throughput, metrics)
         * Self health checks (metrics+[Prometeus](http://www.prometeus.net/site/)+[Grafana](https://grafana.org/))
@@ -151,10 +157,42 @@ Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
   * Messages system: [Rabbit MQ cluster](https://github.com/relaxart/docker-rabbitmq-cluster)
   * Healthcheck system
   * Alerting system
+```
 
 ## Maintenance
 
+```
 * Disaster recovery plan (how to recover service/database/whole cluster/whole region)
 * Release strategy process (canary, blue\green)
 * Capacity planning (resources & limits)
 * Alerts at least for basic metrics (CPU, memory, IOPS, disk space, restarts, servuces up)
+```
+
+## Security
+
+```
+* Access and application logs must be archived for a minimum of 90 days
+* Set HSTS to 31536000 (1 year)
+  * `strict-transport-security: max-age=31536000`
+* Correctly set client IP
+  * Confirm client ip is in the proper location in [X-Forwarded-For](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For), modifying what is sent from the client if needed. AWS and GCP's load balancers will do this automatically.
+  * Make sure the web server and the application get the true client IP by configuring trusted IP's within Nginx or Apache
+    * Nginx: [ngx_http_realip_module](https://nginx.org/en/docs/http/ngx_http_realip_module.html)
+    * Apache: [mod_remoteip](https://httpd.apache.org/docs/2.4/mod/mod_remoteip.html)
+  * If you have a service-oriented architecture, you must always be able to find the IP of the client that sent the initial request. Recommend passing along the `X-Forwarded-For` to all back-end services.
+* for [Cookies](https://wiki.mozilla.org/Security/Guidelines/Web_Security#Cookies):
+  * Set the Secure and HTTPOnly flags
+  * Use a sensible Expiration
+  * Use the prefix `__Host-` for the cookie name
+```
+
+## Databases
+
+```
+* All SQL queries must be parameterized, not concatenated
+* Applications must use accounts with limited GRANTS when connecting to databases
+  * In particular, applications **must not use admin or owner accounts**, to decrease the impact of a sql injection vulnerability.
+* User data must be [escaped for the right context](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet#XSS_Prevention_Rules_Summary) prior to reflecting it
+* Apply sensible limits to user inputs, see [input validation](https://wiki.mozilla.org/WebAppSec/Secure_Coding_Guidelines#Input_Validation)
+  * POST body size should be small (<500kB) unless explicitly needed
+```
