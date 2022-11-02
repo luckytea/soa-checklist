@@ -42,7 +42,7 @@ Content:
       * Functional tests
       * Code style ([golangci-lint](https://github.com/golangci/golangci-lint))
       * Code quality monitoring ([Sonar](http://www.sonarqube.org/), [Scrutinizer](https://scrutinizer-ci.com/))
-      * Code coverage checks ([gitlab example](https://medium.com/@ulm0_/golang-multi-packages-test-coverage-with-gitlab-ci-a7b52b91ef34))
+      * Code coverage checks ([gitlab example](https://gist.github.com/luckytea/c95ca3d33cb7f934ded93ca274fb4d0d))
     * Manual
       * Feature acceptance/Business acceptance
       * A/B tests  
@@ -165,7 +165,7 @@ Content:
 ## Maintenance
 
 * Disaster recovery plan (how to recover service/database/whole cluster/whole region)
-* Release strategy process (canary, blue\green)
+* Release strategy process (canary, blue/green)
 * Capacity planning (resources & limits)
 * Alerts at least for basic metrics (CPU, memory, IOPS, disk space, restarts, servuces up)
 
