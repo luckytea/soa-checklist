@@ -2,6 +2,15 @@
 
 Disclaimer - Trust no one, use your brain! (**Work continuously in progress**)
 
+Content:
+
+* [Administrative](#administrative-people-flows-responsibilities)
+* [Automated processes](#automated-processes)
+* [Implementation](#implementation)
+* [Maintenance](#maintenance)
+* [Security](#security)
+* [Databases](#databases)
+
 ## Administrative (people, flows, responsibilities)
 
 * Blueprint/template for a new service
